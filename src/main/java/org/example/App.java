@@ -1,13 +1,15 @@
 package org.example;
-
-/**
- * Hello world!
- *
- */
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        try {
+            String text = "Це тестовий текст. Це текст, який не несе ніякоо сенсу. А це третє речення!";
+            String[] wordsToCount = {"це", "текст", "а"};
+
+            SentencesCounter.countSentencesContainsWords(text, wordsToCount);
+        } catch (IllegalArgumentException e) {
+            System.err.println("Помилка: " + e.getMessage());
+        }
     }
 }
